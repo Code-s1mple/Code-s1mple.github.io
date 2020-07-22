@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			div{
+				width: 1200px;
+				height: 1000px;
+				margin: 0px auto;
+				background:url(introduction/背景.jpg) no-repeat;
+				background-size: 100% 100%;
+				overflow: hidden;
+			}
+			div>div{
+				width: 800px;
+				height: 1000px;
+				border-radius: 30px;
+				margin: 20px auto;
+				background: white;
+			}
+			div>p{
+				padding-top: 20px;
+				padding-left: 10px;
+				font-size: 18px;
+				text-align: left;
+				/*text-indent: 2em;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<p><strong>姓名：</strong>陈嘉成<br /><br /><strong>年龄：</strong>22<br /><br /><strong>掌握技能：</strong>基础C++，基础JAVA，H5网页设计，会使用Css、JavaScript、Jquery、booterstrap、swiper进行网页设计<br /><br /><strong>邮箱：</strong>449227845@qq.com<br /><br /><strong>组里成员：</strong>钟海健，林凯，王威，刘付立富。<br /><br /><strong>项目：</strong>商联达<br /><br /><strong>组里计划：</strong>组里分配每个人负责两个页面，我是主页，先完成的可以帮助还没完成的组员并且交换做页面时遇到的问题和经验，从而促使项目效率提高，即使完成了这个项目也打算继续找网页项目来做，锻炼和巩固我们的做页面的能力<br /><br /><strong>进行项目的时候所遇到的问题：</strong>其实并没有什么大问题（归根结底还是不细心），在此分享一下遇到某些问题的解决方法：主页头部的下拉框的宽度是和body一样的宽度，但是给精确值的body值的话，不太恰当，所以我用jq获取了body的宽度然后存在一个变量里面，再赋给下拉框的宽度，这样不管怎么样都是和body一样的宽度；然后就是有个旋转式的选项卡效果，一开始胜哥给我了一个让我先入为主的观念：有5个li对应5个div，然后移入对应li，有过渡过程，所以是用jq动画去写，对应div会按y轴旋转出现（0deg），然后会让上一个li对应的div去消失（90deg），这样就会有个让人容易想错的想法出现：记录上一次出现的div的索引，下一次操作的时候让上一次的消失，胜哥也被这样误导了，做法是可以做得出来，但是会变复杂，所以很容易忽略简单的东西：其实也就是永远只有一个div是显示（0deg），其他都是消失（90deg）只要能想到其他都是消失，这种简单的思路，就不会被带偏了，使用siblings就能简单实现，被效果蒙骗了。这个经验告诉我：其实先从基础想起来，一开始就想高了就容易忽略这些简单的东西；还有一个就是jq动画只能填数值型的属性值和属性，那样就没办法去写到rotate（旋转），从网上学到了使用jq动画的回调函数去使用就好了：$(Element).animate({},function{  $(Element).css({"transform":"rotate(0deg)"})   })这样就好了，之前我就是少了逗号导致不能实现，也就是不能粗心大意<br /><br /></p>
+			</div>
+		</div>
+	</body>
+</html>
